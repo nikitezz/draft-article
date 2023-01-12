@@ -44,6 +44,7 @@
                 position: relative;
                 left: 15%;
                 font-family: 'Nunito', sans-serif;
+                font-weight: 500;
             }
             button:hover{
                 transform: scale(1.1);
@@ -54,7 +55,7 @@
         <div class="container">
             <div class="group-container">
                 <p class="content-text">KinoSearch</p>
-                <a href="{{route('register.create')}}"><button type="submit">Смотреть</button></a>
+                <a href="{{route('login.create')}}"><button type="submit">Смотреть</button></a>
             </div>
         </div>
     </body>

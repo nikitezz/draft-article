@@ -20,8 +20,8 @@ Route::get('/', function () {
 Route::get('/register',[UserController::class, 'create'])->name('register.create');
 Route::post('/register',[UserController::class, 'store'])->name('register.store');
 
-Route::get('/home',function (){
-   return view('home');
-});
+Route::get('/home',[\App\Http\Controllers\UserController::class, 'indexHome'])->name('home');
 Route::get('/login',[UserController::class, 'loginForm'])->name('login.create');
 Route::post('/login',[UserController::class,'login'])->name('login');
+
+

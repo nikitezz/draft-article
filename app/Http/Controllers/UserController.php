@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function indexHome(){
+        return view('home');
+    }
     public function create(){
         return view('User.create');
     }
@@ -31,7 +34,7 @@ class UserController extends Controller
         ]);
 
 //        Auth::login($users);
-        return view('welcome');
+        return view('home');
     }
     public function loginForm(){
         return view('User.login');
@@ -49,6 +52,7 @@ class UserController extends Controller
         }
         return request()->back();
     }
+
 
 
 }

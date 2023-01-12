@@ -16,7 +16,7 @@
 
     </header>
     <content>
-
+        <p>Home page</p>
     </content>
     <footer>
 
