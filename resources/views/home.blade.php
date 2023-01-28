@@ -86,7 +86,7 @@
             margin: auto;
             top: 10px;
             cursor: pointer;
-            left: 40%;
+            left: 35%;
         }
         .block-auth{
             width: 70%;
@@ -136,7 +136,7 @@
     <div class="container">
         <div class="block-auth">
             @if(auth()->check())
-                <a href="{{route('logout')}}" class="logout">Выйти</a>
+                <a href="{{route('logout')}}" class="logout">Выйти с профиля</a>
             @else
                 <a href="{{route('login.create')}}" class="login">Авторизация
                 <a href="{{route('register.create')}}" class="register">Регистрация</a>

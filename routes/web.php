@@ -25,5 +25,4 @@ Route::get('/login',[UserController::class, 'loginForm'])->name('login.create');
 Route::post('/login',[UserController::class,'login'])->name('login');
 Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
-
-
+Route::get('/admin',[\App\Http\Controllers\AdminController::class,'index'])->middleware('admin');
