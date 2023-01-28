@@ -55,7 +55,7 @@
         <div class="container">
             <div class="group-container">
                 <p class="content-text">KinoSearch</p>
-                <a href="{{route('login.create')}}"><button type="submit">Смотреть</button></a>
+                <a href="{{route('home')}}"><button type="submit">Смотреть</button></a>
             </div>
         </div>
     </body>

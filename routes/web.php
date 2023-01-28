@@ -23,5 +23,7 @@ Route::post('/register',[UserController::class, 'store'])->name('register.store'
 Route::get('/home',[\App\Http\Controllers\UserController::class, 'indexHome'])->name('home');
 Route::get('/login',[UserController::class, 'loginForm'])->name('login.create');
 Route::post('/login',[UserController::class,'login'])->name('login');
+Route::get('/logout',[UserController::class,'logout'])->name('logout');
+
 
 

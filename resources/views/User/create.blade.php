@@ -85,7 +85,7 @@
                     <label for="avatar">Аватарка</label><br><br>
                     <input type="file" class="form-control-file" id="avatar" name="avatar">
                 </div>
-                <a href="{{route('home')}}"><button type="submit">Зарегистрироваться</button></a>
+                <a href="{{route('login.create')}}"><button type="submit">Зарегистрироваться</button></a>
             </form>
         </div>
     </div>

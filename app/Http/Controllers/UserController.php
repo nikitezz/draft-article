@@ -19,7 +19,7 @@ class UserController extends Controller
     public function store(Request $request){
         $request ->validate([
             'name'=>'required',
-            'email'=>'required|email',
+            'email'=>'required|email|unique:users',
             'password'=>'required',
             'avatar'=>'required',
         ]);
@@ -34,7 +34,7 @@ class UserController extends Controller
         ]);
 
 //        Auth::login($users);
-        return view('home');
+        return view('User.login');
     }
     public function loginForm(){
         return view('User.login');
@@ -52,6 +52,13 @@ class UserController extends Controller
         }
         return request()->back();
     }
+    public function logout(){
+        Auth::logout();
+        return redirect('home');
+    }
+
+
+
 
 
 
