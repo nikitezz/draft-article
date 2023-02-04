@@ -115,6 +115,17 @@
             left: 40%;
             top: 20%;
         }
+        .img-avatar{
+            width: 45px;
+            height: 45px;
+            border-radius: 100%;
+            margin: auto;
+            position: relative;
+            top: -150px;
+            left: 87%;
+            cursor: pointer;
+            border: 2px orange solid;
+        }
 
 
 
@@ -128,6 +139,9 @@
             <p class="logotype">KinoSearch</p>
             @if(auth()->check())
                 <p class="user-name">{{auth()->user()->name}}</p>
+                @if(auth()->user()->avatar)
+                    <img src="{{asset('storage/'. auth()->user()->avatar)}}" alt="" class="img-avatar">
+                @endif
             @else
                 <p class="user-name">Гость</p>
             @endif

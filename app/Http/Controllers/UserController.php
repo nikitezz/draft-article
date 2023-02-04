@@ -21,20 +21,19 @@ class UserController extends Controller
             'name'=>'required',
             'email'=>'required|email|unique:users',
             'password'=>'required',
-            'avatar'=>'required',
+            'avatar'=>'nullable|image'
         ]);
-
-        $avatars = $request->file('avatar')->store("images");
+        $avatar = $request->file('avatar')->store('images');
 
         $users = User::create([
             'name'=>$request->input('name'),
             'email'=>$request->input('email'),
             'password'=>Hash::make($request->input('password')),
-            'avatar'=>$avatars && null,
+            'avatar'=>$avatar ?? null,
         ]);
 
-//        Auth::login($users);
-        return view('User.login');
+        Auth::login($users);
+        return redirect('home');
     }
     public function loginForm(){
         return view('User.login');
