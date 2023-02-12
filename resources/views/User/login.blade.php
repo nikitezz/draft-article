@@ -58,6 +58,11 @@
         button:hover{
             transform: scale(1.1);
         }
+        .alert{
+            background-color: #f68080;
+            padding: 1px 1px 1px;
+            border-radius: 5px;
+        }
     </style>
     <title>Авторизация</title>
 </head>
@@ -66,6 +71,17 @@
     <div class="nav-block">
         <p>Авторизация</p>
         <div class="form-block">
+            <div class="mt-5">
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
             <form action="{{route('login')}}" method="post">
                 @csrf
                 <div class="form-group">

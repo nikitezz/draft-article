@@ -15,7 +15,7 @@
             margin-left: 0;
         }
         body{
-            background-color: #181818;
+            background-color: #262626;
         }
         .wrapper{
             display: flex;
@@ -62,10 +62,16 @@
         .block-item{
             width: 100%;
             height: 400px;
-            background-color: black;
+            background-color: #2d2d2d;
             border-radius: 15px;
             border: 1px orange solid;
             margin-top:30px;
+            cursor: pointer;
+            transition: 0.5s all;
+        }
+        .block-item:hover{
+            transition: 0.5s;
+            transform: scale(1.05);
         }
         .block-title{
             position: relative;
@@ -115,17 +121,7 @@
             left: 40%;
             top: 20%;
         }
-        .img-avatar{
-            width: 45px;
-            height: 45px;
-            border-radius: 100%;
-            margin: auto;
-            position: relative;
-            top: -150px;
-            left: 87%;
-            cursor: pointer;
-            border: 2px orange solid;
-        }
+
 
 
 
@@ -136,12 +132,9 @@
 <div class="wrapper">
     <header>
         <div class="block-nav">
-            <p class="logotype">KinoSearch</p>
+            <p class="logotype">LastCode &lt;/&gt;</p>
             @if(auth()->check())
                 <p class="user-name">{{auth()->user()->name}}</p>
-                @if(auth()->user()->avatar)
-                    <img src="{{asset('storage/'. auth()->user()->avatar)}}" alt="" class="img-avatar">
-                @endif
             @else
                 <p class="user-name">Гость</p>
             @endif

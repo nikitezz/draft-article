@@ -27,7 +27,7 @@ Route::group(['middleware'=>'guest'],function(){
 });
 
 Route::get('/home',[\App\Http\Controllers\UserController::class, 'indexHome'])->name('home');
-
 Route::get('/logout',[UserController::class,'logout'])->name('logout')->middleware('auth');
-
 Route::get('/admin',[\App\Http\Controllers\AdminController::class,'index'])->middleware('admin');
+
+Route::get('/test',[\App\Http\Controllers\TestController::class,'index']);

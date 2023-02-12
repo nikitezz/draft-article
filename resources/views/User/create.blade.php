@@ -59,6 +59,11 @@
         button:hover{
             transform: scale(1.1);
         }
+        .alert{
+            background-color: #f68080;
+            padding: 1px 1px 1px;
+            border-radius: 5px;
+        }
 
     </style>
 </head>
@@ -67,6 +72,17 @@
     <div class="nav-block">
         <p>Регистрация</p>
         <div class="form-block">
+            <div class="mt-5">
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                                @endforeach
+                        </ul>
+                    </div>
+                    @endif
+            </div>
             <form action="{{route('register.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
@@ -80,10 +96,6 @@
                 <div class="form-group">
                     <label for="password">Пароль</label><br><br>
                     <input type="password" name="password" id="password" value="{{old('password')}}">
-                </div>
-                <div class="form-group">
-                    <label for="avatar">Аватарка</label><br><br>
-                    <input type="file" class="form-control-file" id="avatar" name="avatar">
                 </div>
                 <a href="{{route('login.create')}}"><button type="submit">Зарегистрироваться</button></a>
             </form>

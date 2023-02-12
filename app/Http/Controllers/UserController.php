@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use App\Models\User;
@@ -20,16 +21,13 @@ class UserController extends Controller
         $request ->validate([
             'name'=>'required',
             'email'=>'required|email|unique:users',
-            'password'=>'required',
-            'avatar'=>'nullable|image'
+            'password'=>'required|min:8',
         ]);
-        $avatar = $request->file('avatar')->store('images');
 
         $users = User::create([
             'name'=>$request->input('name'),
             'email'=>$request->input('email'),
             'password'=>Hash::make($request->input('password')),
-            'avatar'=>$avatar ?? null,
         ]);
 
         Auth::login($users);
@@ -38,6 +36,7 @@ class UserController extends Controller
     public function loginForm(){
         return view('User.login');
     }
+
     public function login(Request $request){
         $request->validate([
             'email'=>'required|email',

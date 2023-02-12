@@ -57,6 +57,8 @@
                 <p class="txt-info-page"> Страница для администратора</p>
             </div>
         </header>
+        <div class="container">
+        </div>
     </div>
 </body>
 </html>

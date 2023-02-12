@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>KinoSearch</title>
+        <title>LastCode</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -54,8 +54,8 @@
     <body>
         <div class="container">
             <div class="group-container">
-                <p class="content-text">KinoSearch</p>
-                <a href="{{route('home')}}"><button type="submit">Смотреть</button></a>
+                <p class="content-text">LastCode &lt;/&gt;</p>
+                <a href="{{route('home')}}"><button type="submit">Начать</button></a>
             </div>
         </div>
     </body>
