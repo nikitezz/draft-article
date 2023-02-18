@@ -9,9 +9,9 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $attributes = [
-        'content'=>'The best desktop apps for learning laravel'
-    ];
+//    protected $attributes = [
+//        'content'=>'The best desktop apps for learning laravel'
+//    ];
 
 
 

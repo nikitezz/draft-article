@@ -1,0 +1,128 @@
+*{
+    margin-top: 0;
+    margin-left: 0;
+}
+body{
+    background-color: #262626;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+header{
+    background-color: black;
+    width: 99%;
+    height: 70px;
+    margin-left: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px orange solid;
+}
+.logotype{
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    font-family: "Arial Black";
+    padding: 20px 20px;
+    margin-left: 10px;
+}
+.user-name{
+    color: white;
+    font-family: "Arial Black";
+    position: relative;
+    top: -80px;
+    font-size: 15px;
+    text-align: right;
+    padding: 20px 50px ;
+    cursor: pointer;
+    transition: 0.4s all;
+}
+.user-name:hover{
+    color: #cbd5e0;
+}
+.container{
+    margin: auto;
+    margin-top: 5%;
+    width: 70%;
+}
+.block-item{
+    width: 100%;
+    height: 400px;
+    background-color: #2d2d2d;
+    border-radius: 15px;
+    border: 1px orange solid;
+    margin-top:30px;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+.block-item:hover{
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+.block-title{
+    position: relative;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: "Arial Black";
+    text-align: center;
+    top: 5%;
+}
+.block-content{
+    text-indent: 10px;
+    font-size: 19px;
+    color: white;
+    width: 90%;
+    font-family: Arial;
+    padding: 30px 15px;
+    text-align: justify;
+}
+.block-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    width: 25%;
+}
+
+.logout{
+    color: white;
+    font-family: "Arial Black";
+    position: relative;
+    font-size: 15px;
+    padding: 0px 50px ;
+    margin: auto;
+    top: 10px;
+    cursor: pointer;
+    left: 35%;
+}
+.block-auth{
+    width: 70%;
+    height: 50px;
+    background-color: black;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: -5%;
+    border: 1px orange solid;
+}
+.login{
+    color: white;
+    font-family: "Arial Black";
+    position: relative;
+    font-size: 15px;
+    cursor: pointer;
+    left: 30%;
+    top: 20%;
+}
+.register{
+    color: white;
+    font-family: "Arial Black";
+    position: relative;
+    font-size: 15px;
+    cursor: pointer;
+    left: 40%;
+    top: 20%;
+}

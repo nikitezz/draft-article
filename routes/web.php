@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home',[\App\Http\Controllers\UserController::class, 'indexHome'])->name('home');
 
 Route::group(['middleware'=>'guest'],function(){
     Route::get('/register',[UserController::class, 'create'])->name('register.create');
@@ -26,8 +27,12 @@ Route::group(['middleware'=>'guest'],function(){
     Route::post('/login',[UserController::class,'login'])->name('login');
 });
 
-Route::get('/home',[\App\Http\Controllers\UserController::class, 'indexHome'])->name('home');
 Route::get('/logout',[UserController::class,'logout'])->name('logout')->middleware('auth');
 Route::get('/admin',[\App\Http\Controllers\AdminController::class,'index'])->middleware('admin');
 
 Route::get('/test',[\App\Http\Controllers\TestController::class,'index']);
+
+
+Route::group(['middleware'=>'admin'],function(){
+    Route::get('/admin',[\App\Http\Controllers\AdminController::class,'index']);
+});

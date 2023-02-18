@@ -14,6 +14,11 @@ class TestController extends Controller
 //        $post->save();
 //        $users = DB::table('users')->paginate(2);
 //        dump($users);
-        return view('test');
+//        $post = Post::limit(5)->get();
+//        dd($post);
+        $post = Post::all();
+//        dd($post);
+        return view('test',['post'=>$post]);
     }
+
 }

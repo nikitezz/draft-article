@@ -8,6 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-
+<div class="container">
+    @foreach($post as $posts)
+        {{$posts->title}}
+        <br>
+    @endforeach
+        @foreach($post as $posts)
+            {{$posts->content }}
+            <br>
+        @endforeach
+</div>
 </body>
 </html>
