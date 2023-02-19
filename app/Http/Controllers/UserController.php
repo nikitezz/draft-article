@@ -11,16 +11,13 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function indexHome(){
-        return view('home');
-    }
     public function create(){
         return view('User.create');
     }
     public function store(Request $request){
         $request ->validate([
             'name'=>'required',
-            'email'=>'required|email|unique:users',
+            'email'=>'required|email:rfc,dns|unique:users',
             'password'=>'required|min:8',
         ]);
 
@@ -40,7 +37,7 @@ class UserController extends Controller
     public function login(Request $request){
         $request->validate([
             'email'=>'required|email',
-            'password'=>'required',
+            'password'=>'required'
         ]);
         if(Auth::attempt([
             'email'=>$request->email,
@@ -55,7 +52,7 @@ class UserController extends Controller
         return redirect('home');
     }
 
-    
+
 
 
 

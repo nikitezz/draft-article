@@ -22,11 +22,13 @@
         </header>
         <div class="container">
             <br>
+            <a href="{{route('posts.create')}}"><button>Добавление поста</button></a><br>
             <div class="block-table">
                 <table>
-                    <tr><th>Name</th><th>Email</th><th>Password</th></tr>
+                    <tr><th>Name</th><th>Email</th><th>Password</th><th>is_admin</th></tr>
                     @foreach($user as $users)
-                        <tr><td>{{$users->name}}</td><td>{{$users->email}}</td><td>{{$users->password}}</td></tr>
+                        <tr><td>{{$users->name}}</td><td>{{$users->email}}</td>
+                            <td>{{$users->password}}</td><td>{{$users->is_admin}}</td></tr>
                     @endforeach
                 </table>
             </div>

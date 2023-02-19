@@ -75,6 +75,7 @@ header{
     font-size: 19px;
     color: white;
     width: 90%;
+    height: 300px;
     font-family: Arial;
     padding: 30px 15px;
     text-align: justify;
@@ -84,6 +85,7 @@ header{
     justify-content: center;
     align-items: center;
 }
+
 img{
     width: 25%;
 }

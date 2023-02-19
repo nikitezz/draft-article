@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home',[\App\Http\Controllers\UserController::class, 'indexHome'])->name('home');
+Route::get('/home',[\App\Http\Controllers\HomeController::class,'index'])->name('home');
+Route::post('/home',[\App\Http\Controllers\HomeController::class,'store'])->name('posts.store');
 
 Route::group(['middleware'=>'guest'],function(){
     Route::get('/register',[UserController::class, 'create'])->name('register.create');
@@ -35,4 +36,5 @@ Route::get('/test',[\App\Http\Controllers\TestController::class,'index']);
 
 Route::group(['middleware'=>'admin'],function(){
     Route::get('/admin',[\App\Http\Controllers\AdminController::class,'index']);
+    Route::get('/create',[\App\Http\Controllers\HomeController::class,'create'])->name('posts.create');
 });

@@ -10,10 +10,14 @@
     <link rel="stylesheet" href="{{asset("css/home.css")}}">
     <title>Главная</title>
     <style>
+        .block-time{
+            color: white;
+            margin-left: 85%;
+            margin-top: 22%;
+        }
     </style>
 </head>
 <body>
-</body>
 <div class="wrapper">
     <header>
         <div class="block-nav">
@@ -31,63 +35,30 @@
                 <a href="{{route('logout')}}" class="logout">Выйти с профиля</a>
             @else
                 <a href="{{route('login.create')}}" class="login">Авторизация
-                <a href="{{route('register.create')}}" class="register">Регистрация</a>
-                        @endif
+                    <a href="{{route('register.create')}}" class="register">Регистрация</a>
+            @endif
         </div>
-        <div class="block-item">
-            <div class="block-title">
-                Test 1
+        @foreach($posts as $post)
+            <div class="block-item">
+                <div class="block-title">
+                    {{$post->title}}
+                </div>
+                <div class="block-content">
+                    {{$post->content}}
+                </div>
+                <div class="block-time">
+{{--                    <p>{{$post->created_at}}</p>--}}
+                    <p>{{$post->getPostDate()}}</p>
+                </div>
+{{--                <div class="block-img">--}}
+{{--                    <img src="/public/storage/images/67udPZJDcfpffusUoeum4mObyGe7VrwkLUV5kV5C.jpg" alt="">--}}
+{{--                </div>--}}
             </div>
-            <div class="block-content">
-                By default, The Laravel plugin provides a common alias to help you hit the ground running and conveniently import your application's assets:
-                If you would like to build your front-end using the React framework, then you will also need to install the @vitejs/plugin-react plugin:
-            </div>
-            <div class="block-img">
-                <img src="/public/storage/images/67udPZJDcfpffusUoeum4mObyGe7VrwkLUV5kV5C.jpg" alt="">
-            </div>
-        </div>
+        @endforeach
 
 
-        <div class="block-item">
-            <div class="block-title">
-                Test 2
-            </div>
-            <div class="block-content">
-                By default, The Laravel plugin provides a common alias to help you hit the ground running and conveniently import your application's assets:
-                If you would like to build your front-end using the React framework, then you will also need to install the @vitejs/plugin-react plugin:
-            </div>
-            <div class="block-img">
-                <img src="/public/storage/images/67udPZJDcfpffusUoeum4mObyGe7VrwkLUV5kV5C.jpg" alt="">
-            </div>
-        </div>
-
-
-        <div class="block-item">
-            <div class="block-title">
-                Test 3
-            </div>
-            <div class="block-content">
-                By default, The Laravel plugin provides a common alias to help you hit the ground running and conveniently import your application's assets:
-                If you would like to build your front-end using the React framework, then you will also need to install the @vitejs/plugin-react plugin:
-            </div>
-            <div class="block-img">
-                <img src="/public/storage/images/67udPZJDcfpffusUoeum4mObyGe7VrwkLUV5kV5C.jpg" alt="">
-            </div>
-        </div>
-
-
-        <div class="block-item">
-            <div class="block-title">
-                Test 4
-            </div>
-            <div class="block-content">
-                By default, The Laravel plugin provides a common alias to help you hit the ground running and conveniently import your application's assets:
-                If you would like to build your front-end using the React framework, then you will also need to install the @vitejs/plugin-react plugin:
-            </div>
-            <div class="block-img">
-                <img src="/public/storage/images/67udPZJDcfpffusUoeum4mObyGe7VrwkLUV5kV5C.jpg" alt="">
-            </div>
-        </div>
     </div>
 </div>
+</body>
+
 </html>
