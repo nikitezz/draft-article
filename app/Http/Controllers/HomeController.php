@@ -12,11 +12,9 @@ class HomeController extends Controller
         return view('home', compact('posts'));
     }
 
-
     public function create(){
         return view('Post.create');
     }
-
 
     public function store(Request $request){
         $this->validate($request,[
