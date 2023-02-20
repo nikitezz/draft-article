@@ -10,9 +10,14 @@ use mysql_xdevapi\Table;
 
 class AdminController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $users = new User();
+        $posts = new Post();
         $user = User::all();
-      return view('Admin.admin',['user'=>$user]);
+        $post = Post::all();
+      return view('Admin.admin',[
+          'user'=>$user,
+          'post'=>$post,
+      ]);
     }
 }

@@ -37,6 +37,11 @@ header{
     margin-top: -4%;
     margin-left: 40%;
 }
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 table, th, td {
     border: 1px solid white;
     color: white;
@@ -46,3 +51,4 @@ table, th, td {
     justify-content: center;
     align-items: center;
 }
+
