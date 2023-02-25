@@ -53,6 +53,17 @@
                     @endforeach
                 </table>
             </div>
+            <br>
+            <div class="block-delete">
+                <form action="{{ route('post.store') }}" method="post">
+                    @csrf
+                    <label for="text" style="color: white">Введите id post для удаление статьи</label><br>
+                    <input type="number" name="number" id="number">
+                    <a href="{{route('Admin.admin')}}">
+                        <button type="submit">Удалить</button>
+                    </a>
+                </form>
+            </div>
 
         </div>
     </div>

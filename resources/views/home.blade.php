@@ -12,8 +12,8 @@
     <style>
         .block-time{
             color: white;
-            margin-left: 85%;
-            margin-top: 22%;
+            margin-top: -2%;
+            margin-left: 1%;
         }
     </style>
 </head>

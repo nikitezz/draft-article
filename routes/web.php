@@ -37,4 +37,10 @@ Route::get('/test',[\App\Http\Controllers\TestController::class,'index']);
 Route::group(['middleware'=>'admin'],function(){
     Route::get('/admin',[\App\Http\Controllers\AdminController::class,'index']);
     Route::get('/create',[\App\Http\Controllers\HomeController::class,'create'])->name('posts.create');
+
+    Route::post('/delete',[\App\Http\Controllers\AdminController::class,'store'])->name('post.store');
 });
+
+
+
+

@@ -10,7 +10,7 @@ use mysql_xdevapi\Table;
 
 class AdminController extends Controller
 {
-    public function index(Request $request){
+    public function index(){
         $users = new User();
         $posts = new Post();
         $user = User::all();
@@ -20,4 +20,14 @@ class AdminController extends Controller
           'post'=>$post,
       ]);
     }
+    public function store(Request $request){
+        $request->validate([
+            'number'=>'required',
+        ]);
+
+        Post::destroy($request->number);
+
+        return redirect('home');
+    }
+
 }
