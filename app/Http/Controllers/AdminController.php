@@ -20,6 +20,9 @@ class AdminController extends Controller
           'post'=>$post,
       ]);
     }
+    public function indexDel(){
+        return view('Admin.delete');
+    }
     public function store(Request $request){
         $request->validate([
             'number'=>'required',

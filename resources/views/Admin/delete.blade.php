@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="block-delete">
-    <form action="{{ route('posts.store') }}" method="post">
+    <form action="{{ route('post.store') }}" method="post">
         @csrf
         <label for="text" style="color: white">Введите id post для удаление статьи</label><br>
         <input type="number" name="number" id="number">
