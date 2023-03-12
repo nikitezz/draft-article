@@ -23,7 +23,7 @@
         <div class="block-nav">
             <p class="logotype">LastCode &lt;/&gt;</p>
             @if(auth()->check())
-                <p class="user-name">{{auth()->user()->name}}</p>
+                <a href="{{route('profile')}}"><p class="user-name">{{auth()->user()->name}}</p></a>
             @else
                 <p class="user-name">Гость</p>
             @endif

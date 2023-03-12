@@ -42,6 +42,9 @@ Route::group(['middleware'=>'admin'],function(){
     Route::post('/delete',[\App\Http\Controllers\AdminController::class,'store'])->name('post.store');
 });
 
+Route::get('/profile',[\App\Http\Controllers\ProfileUserController::class,'index'])->name('profile');
+
+
 
 
 
