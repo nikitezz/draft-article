@@ -35,6 +35,23 @@
 
             margin-top: 100px;
         }
+        button{
+            width: 180px;
+            height: 40px;
+            margin-left: 15%;
+            margin-top: 5%;
+            font-family: "Arial Black";
+            border: 2px solid orange;
+            border-radius: 10px;
+            outline: none;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            transition: 0.5s all;
+        }
+        button:hover{
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -61,6 +78,10 @@
 {{--                </form>--}}
 {{--            </div>--}}
 {{--        </div>--}}
+        <div class="content">
+            <a href="{{route('suggested.create')}}">
+                <button type="submit">Предложить новость</button></a>
+        </div>
     </div>
 {{--    <p>Hello, {{auth()->user()->name}}</p>--}}
 </body>

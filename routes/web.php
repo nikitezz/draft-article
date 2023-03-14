@@ -44,6 +44,9 @@ Route::group(['middleware'=>'admin'],function(){
 
 Route::get('/profile',[\App\Http\Controllers\ProfileUserController::class,'index'])->name('profile');
 
+//Профиль, предложение статьи
+Route::get('/suggested',[\App\Http\Controllers\ProfileUserController::class,'create'])->name('suggested.create');
+Route::post('/suggested',[\App\Http\Controllers\ProfileUserController::class,'store'])->name('suggested.store');
 
 
 

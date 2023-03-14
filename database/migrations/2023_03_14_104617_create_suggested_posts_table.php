@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSuggestedPost extends Migration
+class CreateSuggestedPostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateSuggestedPost extends Migration
      */
     public function up()
     {
-        Schema::create('suggested_post', function (Blueprint $table) {
+        Schema::create('suggested_posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('content');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateSuggestedPost extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('suggested_post');
+        Schema::dropIfExists('suggested_posts');
     }
 }
